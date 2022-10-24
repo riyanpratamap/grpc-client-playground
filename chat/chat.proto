@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package chat;
+
+message Message {
+    string Body = 1;
+}
+
+service ChatService {
+    rpc SayHello(Message) returns (Message) {}
+}
+
+// protoc --go_out=plugins=grpc:. proto/chat.proto
+
